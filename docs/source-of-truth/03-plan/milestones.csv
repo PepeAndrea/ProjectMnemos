@@ -1,0 +1,10 @@
+Milestone ID,Milestone,Obiettivo,Exit Criteria,Priorità,Stato,Target fase
+M0,Foundation,"Definire dominio, metriche, contratti e baseline del core",Schema concettuale approvato; metriche e test harness definiti,P0,Not Started,Fase 0
+M1,Perception MVP,"Acquisire camera/microfono locali e smartphone remoto, producendo osservazioni realtime","Object detection, tracking, OCR, VAD/ASR, event stream e streaming mobile LAN funzionanti",P0,Not Started,Fase 1
+M2,Entity Memory,Riconoscere entità note e mantenerne storico/last seen,"Enrollment, entity resolution, observations e query last-seen affidabili",P0,Not Started,Fase 2
+M3,Audio & Conversations,Trasformare parlato in conversazioni strutturate,"Transcript, diarizzazione, utterances, conversation search e playback segmenti",P0,Not Started,Fase 3
+M4,Cognitive Layer,"Aggiungere attenzione, System 1, LLM e memory consolidation","Routing, relevance, extraction e query multimodali con cost controls",P0,Not Started,Fase 4
+M5,Prospective Memory,Attivare reminder e task basati sul contesto reale,Trigger persona/oggetto/tempo e reminder contestuali affidabili,P1,Not Started,Fase 5
+M6,Action Engine,Connettere memoria e decisioni a strumenti digitali,"Policy engine, confirmations, task/note/email/calendar adapters",P1,Not Started,Fase 6
+M7,Wearable Pilot,Collegare smart glasses via smartphone al core,"Stream audio/video, feedback, battery/latency baseline e session handling",P1,Not Started,Fase 7
+M8,Hardening,"Privacy, security, observability, performance e test sul campo","Retention, encryption, audit, failure modes e benchmark accettabili",P0,Not Started,Fase 8

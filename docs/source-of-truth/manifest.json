@@ -1,0 +1,42 @@
+{
+  "project": "Project Mnemos",
+  "assistant_name": "Tobi",
+  "authority": "google_drive",
+  "sync_direction_default": "drive_to_local",
+  "canonical_folder": {
+    "id": "1ePbpeK5whLa_CzFVWJgMKhFgbvC_KK9X",
+    "url": "https://drive.google.com/drive/folders/1ePbpeK5whLa_CzFVWJgMKhFgbvC_KK9X"
+  },
+  "sources": [
+    {
+      "order": 0,
+      "name": "codex_operating_guide",
+      "drive_id": "1f9pI-MRI9fc8ySRLzKyzxTQmo1n2XjISiNYNL9EQ7lo",
+      "local": "docs/source-of-truth/00-codex-operating-guide.md"
+    },
+    {
+      "order": 1,
+      "name": "functional_spec",
+      "drive_id": "1JcTqwcS33izt-XNRlOMk3tYli0BziBgUFm2g3QrpJDE",
+      "local": "docs/source-of-truth/01-functional-spec.md"
+    },
+    {
+      "order": 2,
+      "name": "memory_governance",
+      "drive_id": "1N2UokZ7RZDzQrRYBXGZTLj5tX3xC1b9i62foCCNXVGM",
+      "local": "docs/source-of-truth/02-memory-governance.md"
+    },
+    {
+      "order": 3,
+      "name": "operational_plan",
+      "drive_id": "11qEHyAk8olGoxgKXzt9TMp6AiGKxg8V_8xuef9k_zAQ",
+      "local": "docs/source-of-truth/03-plan/"
+    },
+    {
+      "order": 5,
+      "name": "architecture_stack",
+      "drive_id": "1CPNBXIvAKoTXic5AdSY-qS4917wwHaUz_UC61pigvbk",
+      "local": "docs/source-of-truth/05-architecture-stack.md"
+    }
+  ]
+}

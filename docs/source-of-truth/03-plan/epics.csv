@@ -1,0 +1,27 @@
+Epic ID,Milestone,Epic,Descrizione,Priorità,Dipendenze,Stato
+E01,M0,Domain Model,"Definire Entity, Observation, Event, Conversation, Memory, Task, Reminder, Action",P0,,Not Started
+E02,M0,Benchmark & Metrics,"Dataset di test, metriche precision/latency/storage/cost e test harness",P0,E01,Not Started
+E03,M1,Video Ingestion,"Camera/webcam stream, sampling, buffering e clock comune",P0,E01,Not Started
+E04,M1,Visual Perception,"Detection, tracking, OCR e visual event extraction",P0,E03,Not Started
+E05,M1,Audio Ingestion,"Microfono, VAD, chunking, rolling buffer e ASR",P0,E01,Not Started
+E06,M2,Entity Registry,"CRUD entità, enrollment e metadata",P0,E01,Not Started
+E07,M2,Entity Resolution,"Embeddings, candidate search, evidence e confidence policy",P0,"E04,E06",Not Started
+E08,M2,Observation History,"Persistenza osservazioni, last seen e query temporali",P0,"E06,E07",Not Started
+E09,M3,Speaker Layer,"Diarizzazione, speaker embedding e associazione audio-video",P0,"E05,E06",Not Started
+E10,M3,Conversation Model,"Sessioni, utterances, topics, transcript e audio segment references",P0,"E05,E09",Not Started
+E11,M3,Conversation Retrieval,Ricerca per persona/topic/data e playback del segmento sorgente,P1,E10,Not Started
+E12,M4,World State,Hot memory e stato multimodale corrente,P0,"E04,E08,E10",Not Started
+E13,M4,System 1 Router,"Relevance, novelty, anomaly, memory/interrupt/escalation decisions",P0,"E12,E02",Not Started
+E14,M4,LLM Orchestrator,"Prompt contracts, structured outputs, RAG e ambiguity resolution",P0,"E12,E13",Not Started
+E15,M4,Memory Consolidation,"Semantic/episodic memory, dedup, decay e provenance",P0,"E08,E10,E14",Not Started
+E16,M5,Prospective Memory,Trigger engine su tempo/persona/oggetto/luogo/topic,P0,"E12,E15",Not Started
+E17,M5,Contextual Reminders,"Notification policy, cooldown, confidence e interruptibility",P1,"E13,E16",Not Started
+E18,M6,Policy Engine,"Risk levels, permission model, confirmations e audit",P0,"E13,E14",Not Started
+E19,M6,Tool Adapters,"Task, notes, email draft, calendar, CRM e webhook abstraction",P1,E18,Not Started
+E20,M7,Wearable Bridge,"Glasses-smartphone streaming, reconnect e session state",P1,"E03,E05",Not Started
+E21,M7,Wearable UX,"Audio feedback, minimal display cues e privacy controls",P1,"E20,E17",Not Started
+E22,M8,Privacy & Retention,Modalità Privacy/Standard/Enhanced/Meeting/Evidence,P0,"E01,E15,E18",Not Started
+E23,M8,Security,"Encryption, key management, biometric isolation e access controls",P0,"E06,E18",Not Started
+E24,M8,Observability & Cost,"Telemetry, LLM budget, storage/day, inference locality e alerts",P0,"E02,E13,E14",Not Started
+E25,M8,Field Validation,"Test reali, false positives, usability, interrupt rate e failure modes",P0,"E17,E20,E22,E23,E24",Not Started
+E26,M1,Remote Mobile Sensor Gateway,Smartphone come sensore remoto camera+microfono verso il local brain; LAN-first e remoto-ready,P0,"E03,E05",Not Started

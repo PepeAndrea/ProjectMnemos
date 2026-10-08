@@ -1,0 +1,97 @@
+Task ID,Milestone,Epic,Task,Descrizione / Deliverable,Priorità,Stato,Dipendenze,Owner,Stima,Note
+T001,M0,E01,Disegnare schema Entity e Identity Entity,"Definire campi, alias, embeddings, attributes, relations, provenance e retention.",P0,Not Started
+T002,M0,E01,Disegnare schema Observation/Event,"Separare evento sensoriale, osservazione e memoria persistente.",P0,Not Started,T001
+T003,M0,E01,Definire Conversation/Utterance,"Modello sessione, speaker, timestamp, source audio e topics.",P0,Not Started,T001
+T004,M0,E01,Definire Memory/Task/Reminder/Action,"Contratti semantici, episodici e prospettici.",P0,Not Started,T001
+T005,M0,E02,Definire metriche MVP,"Precisione, latency, false positives, storage/day, LLM calls/day, interrupt rate.",P0,Not Started,T001:T004
+T006,M0,E02,Preparare test harness,Scenario replayabile con video/audio campione e expected events.,P0,Not Started,T005
+T007,M1,E03,Acquisizione webcam realtime,"Pipeline camera, frame timestamp e configurazione resolution/FPS.",P0,Not Started,T002
+T008,M1,E03,Rolling video buffer,Buffer circolare configurabile e estrazione pre/post evento.,P1,Not Started,T007
+T009,M1,E04,Object detection baseline,Rilevare classi comuni con confidence e bounding box.,P0,Not Started,T007
+T010,M1,E04,Object tracking,Track ID persistente tra frame e lifecycle enter/update/exit.,P0,Not Started,T009
+T011,M1,E04,OCR sulle ROI,"OCR event-driven sulle regioni rilevanti, non sull'intero frame continuo.",P1,Not Started,T009
+T012,M1,E04,Face detection,Estrarre volti con quality score senza identity persistente.,P0,Not Started,T007
+T013,M1,E05,Acquisizione microfono,Audio input con clock comune e stream chunked.,P0,Not Started,T002
+T014,M1,E05,Voice Activity Detection,Distinguere parlato/silenzio e generare speech segments.,P0,Not Started,T013
+T015,M1,E05,ASR realtime,Trascrizione con timestamp e confidence.,P0,Not Started,T014
+T016,M1,E05,Rolling audio buffer,Buffer breve con persistenza solo event/session driven.,P0,Not Started,T013
+T017,M2,E06,Entity CRUD e enrollment,Creazione manuale/vocale di persone e oggetti autorizzati.,P0,Not Started,T001
+T018,M2,E06,Acquisizione reference views,Più viste di un oggetto/persona e quality checks.,P1,Not Started,T017
+T019,M2,E07,Visual embedding pipeline,Embedding di crop e ricerca candidati.,P0,Not Started,"T009,T017"
+T020,M2,E07,Face embedding matching,Matching persone registrate con soglie conservative.,P0,Not Started,"T012,T017"
+T021,M2,E07,Local feature verification,Second-stage matching per oggetti specifici e tratti distintivi.,P1,Not Started,T019
+T022,M2,E07,Evidence object,"Salvare score, OCR, feature match e provenance del riconoscimento.",P0,Not Started,T019:T021
+T023,M2,E08,Observation persistence,"Persistenza event-driven con timestamp, source, entity e confidence.",P0,Not Started,"T002,T022"
+T024,M2,E08,Last-seen query,Query ultima osservazione affidabile di una entity.,P0,Not Started,T023
+T025,M2,E08,Entity timeline,Cronologia osservazioni e intervalli consolidati.,P1,Not Started,T023
+T026,M3,E09,Speaker diarization,Segmentare speaker A/B/... nelle conversazioni.,P0,Not Started,T015
+T027,M3,E09,Speaker enrollment,Voice embedding per speaker autorizzati.,P1,Not Started,"T017,T026"
+T028,M3,E09,Audio-video speaker association,"Correlare speaker, face track e contesto temporale.",P1,Not Started,"T010,T026"
+T029,M3,E10,Conversation session detection,Aprire/chiudere sessioni e aggregare utterances.,P0,Not Started,"T015,T026"
+T030,M3,E10,Persistenza transcript indicizzato,"Speaker, text, timecodes, entities e source segment.",P0,Not Started,T029
+T031,M3,E10,Meeting recording mode,Registrazione completa esplicita con policy dedicata.,P1,Not Started,"T016,T029"
+T032,M3,E11,Semantic conversation search,"Ricerca per persona, topic, data, testo e similarity.",P0,Not Started,T030
+T033,M3,E11,Audio segment playback,Aprire il segmento audio esatto collegato a una utterance.,P1,Not Started,"T030,T031"
+T034,M4,E12,World-state builder,"Compattare persone, oggetti, focus, conversation e recent events.",P0,Not Started,"T010,T023,T029"
+T035,M4,E12,Hot memory lifecycle,"TTL, session scope e reset/merge tra contesti.",P0,Not Started,T034
+T036,M4,E13,Intent classifier,Classificare question/command/task/reminder/memory/commitment/etc.,P0,Not Started,"T015,T034"
+T037,M4,E13,Attention decision contract,Output bounded: ignore/store/notify/ask/query/call LLM/etc.,P0,Not Started,"T034,T005"
+T038,M4,E13,Relevance & novelty scoring,Score e threshold calibrabili.,P0,Not Started,T037
+T039,M4,E13,LLM escalation policy,Regole e confidence per invocare reasoning pesante.,P0,Not Started,"T037,T038"
+T040,M4,E14,Structured LLM outputs,"JSON schema per task, memory, reminder, action e answers.",P0,Not Started,"T004,T039"
+T041,M4,E14,Reference/pronoun resolution,"Usare world state per risolvere 'lui', 'questo', 'quello'.",P0,Not Started,"T034,T040"
+T042,M4,E14,Memory RAG,Recuperare solo episodi/fatti rilevanti prima del reasoning.,P0,Not Started,"T024,T032,T040"
+T043,M4,E15,Conversation consolidation,"Estrarre summary, decisions, tasks, commitments e memory updates.",P0,Not Started,"T030,T040"
+T044,M4,E15,Observation consolidation,Unire osservazioni ridondanti e intervalli di presenza.,P1,Not Started,T023
+T045,M4,E15,Memory decay/dedup,"Policy per scadenza, importanza e duplicati.",P1,Not Started,"T043,T044"
+T046,M5,E16,Trigger engine temporale,Reminder time-based.,P0,Not Started,T004
+T047,M5,E16,Trigger person/object visible,Reminder basato su entity recognition.,P0,Not Started,"T024,T034"
+T048,M5,E16,Compound contextual triggers,Condizioni multiple: persona + luogo + topic + time window.,P1,Not Started,T047
+T049,M5,E17,Interrupt policy,"Urgency, relevance, cooldown, activity e duplicate suppression.",P0,Not Started,"T038,T046:T048"
+T050,M5,E17,Reminder UX,Notifica audio/UI e feedback completato/snooze/ignore.,P1,Not Started,T049
+T051,M6,E18,Action schema,"Action type, risk, source, params, confidence e result.",P0,Not Started,"T004,T040"
+T052,M6,E18,Confirmation policy,Automatic/draft/confirm/strong-confirm.,P0,Not Started,T051
+T053,M6,E18,Speaker command authorization,Impedire comandi privilegiati da speaker non autorizzati.,P0,Not Started,"T027,T052"
+T054,M6,E19,Task adapter,Creare task interni/esterni.,P1,Not Started,"T051,T052"
+T055,M6,E19,Email/message draft adapter,Preparare bozze senza invio automatico.,P1,Not Started,"T051,T052"
+T056,M6,E19,Calendar adapter,Creare proposte evento con conferma.,P1,Not Started,"T051,T052"
+T057,M6,E19,CRM adapter,Aggiornare notes/tasks/fields con audit.,P2,Not Started,"T051,T052"
+T058,M7,E20,Wearable SDK spike,Verificare stream camera/mic e limiti piattaforma scelta.,P0,Not Started,"T007,T013"
+T059,M7,E20,Phone bridge,Relay wearable -> smartphone -> local brain.,P0,Not Started,T058
+T060,M7,E20,Reconnect/session handling,Recovery da disconnessione e network change.,P1,Not Started,T059
+T061,M7,E21,Audio feedback,"Risposte brevi, reminder e conferme su wearable.",P1,Not Started,"T059,T050"
+T062,M7,E21,Privacy controls wearable,Mute/pause/record indicators e quick controls.,P0,Not Started,T059
+T063,M8,E22,Retention profiles,Implementare Privacy/Standard/Enhanced/Meeting/Evidence.,P0,Not Started,"T016,T031,T045"
+T064,M8,E22,Deletion/export controls,Cancellazione entity/conversation/memory e export auditabile.,P0,Not Started,T063
+T065,M8,E23,Encryption at rest,"Proteggere DB, media e biometric templates.",P0,Not Started,"T017,T030"
+T066,M8,E23,Biometric data isolation,Storage/logical boundary e revoke enrollment.,P0,Not Started,"T020,T027,T065"
+T067,M8,E23,Audit log,"Accessi, decisioni, actions e user corrections.",P0,Not Started,"T051,T065"
+T068,M8,E24,LLM/token telemetry,Cost per event/query/day e cache effectiveness.,P0,Not Started,"T039,T040"
+T069,M8,E24,Storage telemetry,Audio/video/keyframes/embeddings per day.,P0,Not Started,T063
+T070,M8,E24,Latency telemetry,"Perception, entity resolution, decision e response latency.",P0,Not Started,"T009,T015,T037"
+T071,M8,E25,False identity benchmark,Test persone/oggetti simili e soglie.,P0,Not Started,"T006,T020,T021"
+T072,M8,E25,Conversation benchmark,"ASR, diarization, task/commitment extraction e retrieval.",P0,Not Started,"T006,T032,T043"
+T073,M8,E25,Interrupt benchmark,Misurare notifiche utili vs inutili.,P0,Not Started,T049
+T074,M8,E25,Offline/degraded mode,Test senza cloud e queue sync successivo.,P1,Not Started,"T039,T042,T059"
+T075,M8,E25,Field pilot,Uso reale controllato e raccolta failure cases.,P0,Not Started,T071:T074
+T076,M1,E26,Definire transport ADR,"Confrontare WebRTC e alternative per LAN/remoto, A/V sync, NAT, auth e debug.",P0,Not Started,"T007,T013"
+T077,M1,E26,Mobile capture prototype,Acquisire camera front/back e microfono sul telefono con timestamp comune.,P0,Not Started,T076
+T078,M1,E26,LAN pairing & authentication,"Pairing sicuro computer-telefono, session token e revoca.",P0,Not Started,T076
+T079,M1,E26,Realtime A/V streaming,Inviare camera e microfono al computer con latenza misurabile.,P0,Not Started,"T077,T078"
+T080,M1,E26,Remote sensor ingestion adapter,Esporre lo stream mobile alla stessa pipeline usata da webcam/microfono locali.,P0,Not Started,"T079,T009,T015"
+T081,M1,E26,Reconnect & network recovery,"Gestire perdita rete, cambio Wi-Fi, pause/resume e session recovery.",P1,Not Started,T079
+T082,M1,E26,Mobile telemetry,"Misurare latency, bitrate, packet loss, resolution, FPS e audio continuity.",P1,Not Started,"T079,T070"
+T083,M1,E26,Remote mode spike,Preparare estensione Internet/NAT traversal senza renderla requisito bloccante dell'MVP LAN.,P2,Not Started,"T076,T079"
+T084,M2,E07,Benchmark EmbeddingGemma 2 su M1,"Misurare RAM, latenza e throughput su text-only, text+vision, text+audio e full; confrontare 256/512/768d e runtime SentenceTransformers/MLX/LiteRT dove praticabile.",P0,Not Started,"T006,T019"
+T085,M4,E15,Unified multimodal memory index,"Indicizzare testo, OCR, keyframe, crop immagine e clip audio/video nello spazio condiviso EmbeddingGemma 2; pgvector con dimensione default scelta dal benchmark.",P0,Not Started,"T084,T023,T030"
+T086,M4,E13,Local zero-shot decision router,Valutare EmbeddingGemma 2 per intent/relevance/novelty routing locale confrontandolo con regole e provider cloud; vietato usarlo da solo per action privilegiate.,P1,Not Started,"T084,T036,T037"
+T087,M2,E07,Instance identity benchmark,Verificare se EmbeddingGemma 2 è sufficiente per shortlist di oggetti specifici e confrontarlo con DINOv2/local feature matching per distinguere la stessa istanza fisica da oggetti semanticamente simili.,P0,Not Started,"T084,T021"
+T088,M0,E01,Repository bootstrap,"Creare monorepo, AGENTS.md, CODEX.md, layout docs/runtime e configurazione base riproducibile.",P0,Not Started,T001:T006
+T089,M0,E02,Installation & data registries,"Implementare INSTALLATION_REGISTRY.md, DATA_LAYOUT.md e controllo automatico dei path runtime.",P0,Not Started,T088
+T090,M0,E02,Drive source-of-truth sync,"Implementare docs:pull, docs:status, docs:verify e docs:push esplicito usando manifest e conflict detection.",P0,Not Started,T088
+T091,M1,E26,Trusted HTTPS LAN bootstrap,"Provisioning certificato attendibile per pagina mobile LAN, QR URL HTTPS e verifica secure-context/getUserMedia.",P0,Not Started,"T076,T078"
+T092,M4,E13,Tobi direct-address confidence,"Integrare speaker identity, semantic intent e menzione esplicita 'Tobi' nel routing delle richieste rivolte al sistema.",P1,Not Started,"T027,T036,T037"
+T093,M8,E23,Model license inventory,Registrare licenza codice e pesi di ogni modello/provider; bloccare componenti non conformi alle policy prodotto.,P0,Not Started,T088
+T094,M8,E24,Low-memory M1 profile,"Definire e testare profilo ufficiale M1/8GB con lazy loading, frame sampling, bounded queues ed eviction modelli.",P0,Not Started,"T070,T084"
+T095,M8,E25,Clean uninstall & purge tooling,"Implementare doctor, clean-cache, export-data e purge-runtime con dry-run e conferma distruttiva.",P1,Not Started,"T089,T063,T064"
+T096,M1,E05,Five-minute rolling buffers,"Implementare buffer circolare audio e video resource-bounded fino a 5 minuti, non persistente salvo policy.",P0,Not Started,"T008,T016"
