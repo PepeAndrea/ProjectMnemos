@@ -26,3 +26,18 @@ runtime/tmp/*
 runtime/exports/*
 !runtime/exports/.gitkeep
 runtime/datasets/private/
+
+runtime/venv/
+runtime/core-venv/
+runtime/python/
+*.egg-info/
+
+runtime/datasets/synthetic/
+
+runtime/datasets/perception-replay/
+runtime/web-dist/
+
+# Downloaded native sources/builds and locally generated, non-redistributed speech.
+runtime/tools/
+runtime/datasets/speech-synthetic/
+runtime/datasets/session-names-synthetic/

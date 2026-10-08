@@ -1,0 +1,216 @@
+{
+  "$defs": {
+    "Provenance": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": 1,
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "source_id": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "observed_at": {
+          "format": "date-time",
+          "title": "Observed At",
+          "type": "string"
+        },
+        "method": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Method",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "maxItems": 100,
+          "title": "Evidence Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "source_id",
+        "method"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "Retention": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": 1,
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "scope": {
+          "default": "session",
+          "enum": [
+            "session",
+            "persistent"
+          ],
+          "title": "Scope",
+          "type": "string"
+        },
+        "expires_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Expires At"
+        },
+        "purpose": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Purpose",
+          "type": "string"
+        }
+      },
+      "required": [
+        "purpose"
+      ],
+      "title": "Retention",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "id": {
+      "format": "uuid",
+      "title": "Id",
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "person",
+        "object",
+        "place",
+        "device",
+        "concept",
+        "vehicle",
+        "document",
+        "product",
+        "machine",
+        "component",
+        "animal"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "name": {
+      "maxLength": 4096,
+      "minLength": 1,
+      "title": "Name",
+      "type": "string"
+    },
+    "aliases": {
+      "items": {
+        "maxLength": 4096,
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 100,
+      "title": "Aliases",
+      "type": "array"
+    },
+    "attributes": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Attributes",
+      "type": "object"
+    },
+    "relations": {
+      "additionalProperties": {
+        "items": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "title": "Relations",
+      "type": "object"
+    },
+    "reference_ids": {
+      "items": {
+        "format": "uuid",
+        "type": "string"
+      },
+      "title": "Reference Ids",
+      "type": "array"
+    },
+    "embedding_refs": {
+      "items": {
+        "format": "uuid",
+        "type": "string"
+      },
+      "title": "Embedding Refs",
+      "type": "array"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    },
+    "retention": {
+      "$ref": "#/$defs/Retention"
+    },
+    "confidence": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Confidence",
+      "type": "number"
+    },
+    "enrolled": {
+      "default": false,
+      "title": "Enrolled",
+      "type": "boolean"
+    },
+    "biometric_consent": {
+      "default": false,
+      "title": "Biometric Consent",
+      "type": "boolean"
+    },
+    "owner_id": {
+      "anyOf": [
+        {
+          "format": "uuid",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Owner Id"
+    }
+  },
+  "required": [
+    "kind",
+    "name",
+    "provenance",
+    "retention",
+    "confidence"
+  ],
+  "title": "Entity",
+  "type": "object"
+}

@@ -1,0 +1,146 @@
+{
+  "$defs": {
+    "Provenance": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": 1,
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "source_id": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "observed_at": {
+          "format": "date-time",
+          "title": "Observed At",
+          "type": "string"
+        },
+        "method": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Method",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "maxItems": 100,
+          "title": "Evidence Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "source_id",
+        "method"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "Risk": {
+      "enum": [
+        "automatic",
+        "audit",
+        "confirmation",
+        "strong-confirmation",
+        "prohibited"
+      ],
+      "title": "Risk",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "id": {
+      "format": "uuid",
+      "title": "Id",
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "consent_expire",
+        "person_enroll",
+        "person_revoke",
+        "biometric_store",
+        "biometric_read",
+        "track_bind",
+        "reference_store",
+        "reference_read",
+        "reference_delete",
+        "reference_expire",
+        "entity_create",
+        "entity_update",
+        "memory",
+        "task",
+        "reminder",
+        "notify",
+        "draft_email",
+        "calendar",
+        "crm",
+        "delete",
+        "payment",
+        "sensor_start",
+        "sensor_stop"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "params": {
+      "additionalProperties": true,
+      "title": "Params",
+      "type": "object"
+    },
+    "source_event_id": {
+      "format": "uuid",
+      "title": "Source Event Id",
+      "type": "string"
+    },
+    "requested_by": {
+      "anyOf": [
+        {
+          "format": "uuid",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Requested By"
+    },
+    "confidence": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Confidence",
+      "type": "number"
+    },
+    "risk": {
+      "$ref": "#/$defs/Risk"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    }
+  },
+  "required": [
+    "kind",
+    "params",
+    "source_event_id",
+    "confidence",
+    "risk",
+    "provenance"
+  ],
+  "title": "ActionProposal",
+  "type": "object"
+}

@@ -1,0 +1,8 @@
+{
+  "file": "fictional-frontal-v1.png",
+  "sha256": "f1b4ac96e580c64d5b8bec973a711af0dfd9e38eade50ab5459809a4a7b71a20",
+  "real_subject": false,
+  "origin": "built-in image_gen tool, 2026-10-08",
+  "purpose": "single positive YuNet/landmark acquisition regression fixture, not biometric accuracy calibration",
+  "prompt": "Use case: photorealistic-natural. Asset type: synthetic computer-vision test fixture for a local face detector, not marketing. Create one square 1024x1024 photographic-looking head-and-shoulders portrait of a wholly fictional adult person, not resembling any real person or celebrity. Neutral expression, looking straight at the camera, open eyes, unobstructed face, no glasses, no hat, no hair covering eyes. Both ears visible, complete face and head fully inside frame with generous margins. Even diffuse daylight, sharp natural facial texture, plain mid-gray background, ordinary neutral shirt. Face occupies about half the image width. Exactly one face. No text, watermark, other people or objects. This is an AI-generated non-real subject for deterministic perception replay testing."
+}

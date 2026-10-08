@@ -1,0 +1,10 @@
+#!/bin/sh
+set -eu
+cd "$(dirname "$0")/.."
+export PYTHONDONTWRITEBYTECODE=1
+runtime/core-venv/bin/ruff check apps/core tests
+runtime/core-venv/bin/ruff format --check apps/core tests
+runtime/core-venv/bin/mypy
+runtime/core-venv/bin/python -m pytest -q
+runtime/core-venv/bin/python -m mnemos.docs_sync verify
+runtime/core-venv/bin/python -m mnemos.replay

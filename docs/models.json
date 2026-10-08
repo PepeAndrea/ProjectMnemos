@@ -1,0 +1,64 @@
+{
+  "models": [
+    {
+      "name": "yolox-s",
+      "runtime_path": "models/opencv/yolox-s.onnx",
+      "sha256": "c5c2d13e59ae883e6af3b45daea64af4833a4951c92d116ec270d9ddbe998063",
+      "bytes": 35858002,
+      "revision": "47534e27c9851bb1128ccc0102f1145e27f23f98",
+      "url": "https://media.githubusercontent.com/media/opencv/opencv_zoo/47534e27c9851bb1128ccc0102f1145e27f23f98/models/object_detection_yolox/object_detection_yolox_2022nov.onnx",
+      "code_license": "Apache-2.0",
+      "weight_license": "Apache-2.0",
+      "license_source": "https://github.com/opencv/opencv_zoo/blob/47534e27c9851bb1128ccc0102f1145e27f23f98/models/object_detection_yolox/README.md",
+      "replacement_path": "DetectorProvider adapter, provider contract stable"
+    },
+    {
+      "name": "yunet",
+      "runtime_path": "models/opencv/yunet.onnx",
+      "sha256": "8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4",
+      "bytes": 232589,
+      "revision": "47534e27c9851bb1128ccc0102f1145e27f23f98",
+      "url": "https://media.githubusercontent.com/media/opencv/opencv_zoo/47534e27c9851bb1128ccc0102f1145e27f23f98/models/face_detection_yunet/face_detection_yunet_2023mar.onnx",
+      "code_license": "MIT",
+      "weight_license": "MIT",
+      "license_source": "https://github.com/opencv/opencv_zoo/blob/47534e27c9851bb1128ccc0102f1145e27f23f98/models/face_detection_yunet/README.md",
+      "replacement_path": "DetectorProvider adapter, provider contract stable"
+    },
+    {
+      "name": "whisper-tiny",
+      "runtime_path": "models/whisper/ggml-tiny.bin",
+      "sha256": "be07e048e1e599ad46341c8d2a135645097a538221678b7acdd1b1919c6e1b21",
+      "bytes": 77691713,
+      "revision": "5359861c739e955e79d9a303bcbc70fb988958b1",
+      "url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/5359861c739e955e79d9a303bcbc70fb988958b1/ggml-tiny.bin",
+      "code_license": "MIT",
+      "weight_license": "MIT",
+      "license_source": "https://huggingface.co/ggerganov/whisper.cpp/blob/5359861c739e955e79d9a303bcbc70fb988958b1/README.md",
+      "replacement_path": "Local ASR/VAD provider contract; no cloud or automatic downloads"
+    },
+    {
+      "name": "silero-vad",
+      "runtime_path": "models/whisper/ggml-silero-v6.2.0.bin",
+      "sha256": "2aa269b785eeb53a82983a20501ddf7c1d9c48e33ab63a41391ac6c9f7fb6987",
+      "bytes": 885098,
+      "revision": "9ffd54a1e1ee413ddf265af9913beaf518d1639b",
+      "url": "https://huggingface.co/ggml-org/whisper-vad/resolve/9ffd54a1e1ee413ddf265af9913beaf518d1639b/ggml-silero-v6.2.0.bin",
+      "code_license": "MIT",
+      "weight_license": "MIT",
+      "license_source": "https://huggingface.co/ggml-org/whisper-vad/blob/9ffd54a1e1ee413ddf265af9913beaf518d1639b/README.md",
+      "replacement_path": "Local ASR/VAD provider contract; no cloud or automatic downloads"
+    },
+    {
+      "name": "whisper-base",
+      "runtime_path": "models/whisper/ggml-base.bin",
+      "sha256": "60ed5bc3dd14eea856493d334349b405782ddcaf0028d4b5df4088345fba2efe",
+      "bytes": 147951465,
+      "revision": "5359861c739e955e79d9a303bcbc70fb988958b1",
+      "url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/5359861c739e955e79d9a303bcbc70fb988958b1/ggml-base.bin",
+      "code_license": "MIT",
+      "weight_license": "MIT",
+      "license_source": "https://huggingface.co/ggerganov/whisper.cpp/blob/5359861c739e955e79d9a303bcbc70fb988958b1/README.md",
+      "replacement_path": "Local ASR/VAD provider contract; no cloud or automatic downloads"
+    }
+  ]
+}

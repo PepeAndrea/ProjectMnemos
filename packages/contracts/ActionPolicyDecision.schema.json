@@ -1,0 +1,55 @@
+{
+  "$defs": {
+    "Risk": {
+      "enum": [
+        "automatic",
+        "audit",
+        "confirmation",
+        "strong-confirmation",
+        "prohibited"
+      ],
+      "title": "Risk",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "proposal_id": {
+      "format": "uuid",
+      "title": "Proposal Id",
+      "type": "string"
+    },
+    "allowed": {
+      "title": "Allowed",
+      "type": "boolean"
+    },
+    "risk": {
+      "$ref": "#/$defs/Risk"
+    },
+    "reason": {
+      "maxLength": 4096,
+      "minLength": 1,
+      "title": "Reason",
+      "type": "string"
+    },
+    "confirmation_required": {
+      "title": "Confirmation Required",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "proposal_id",
+    "allowed",
+    "risk",
+    "reason",
+    "confirmation_required"
+  ],
+  "title": "ActionPolicyDecision",
+  "type": "object"
+}

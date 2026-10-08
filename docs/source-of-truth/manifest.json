@@ -12,31 +12,56 @@
       "order": 0,
       "name": "codex_operating_guide",
       "drive_id": "1f9pI-MRI9fc8ySRLzKyzxTQmo1n2XjISiNYNL9EQ7lo",
-      "local": "docs/source-of-truth/00-codex-operating-guide.md"
+      "local": "docs/source-of-truth/00-codex-operating-guide.md",
+      "sha256": "12927c4d2dcfdb4f71f46a74907932327cfbd819978915af95680a70a4e10f8e",
+      "modified_time": "2026-10-08T08:37:33.457Z",
+      "url": "https://drive.google.com/file/d/1f9pI-MRI9fc8ySRLzKyzxTQmo1n2XjISiNYNL9EQ7lo/view",
+      "synced_at": "2026-10-08T12:38:35.001686+00:00"
     },
     {
       "order": 1,
       "name": "functional_spec",
       "drive_id": "1JcTqwcS33izt-XNRlOMk3tYli0BziBgUFm2g3QrpJDE",
-      "local": "docs/source-of-truth/01-functional-spec.md"
+      "local": "docs/source-of-truth/01-functional-spec.md",
+      "sha256": "915205e437ec76d6afc529a4f3c7bb49e298a844c471ca609c08e99813227a66",
+      "modified_time": "2026-10-08T08:22:59.439Z",
+      "url": "https://drive.google.com/file/d/1JcTqwcS33izt-XNRlOMk3tYli0BziBgUFm2g3QrpJDE/view",
+      "synced_at": "2026-10-08T12:38:35.002241+00:00"
     },
     {
       "order": 2,
       "name": "memory_governance",
       "drive_id": "1N2UokZ7RZDzQrRYBXGZTLj5tX3xC1b9i62foCCNXVGM",
-      "local": "docs/source-of-truth/02-memory-governance.md"
+      "local": "docs/source-of-truth/02-memory-governance.md",
+      "sha256": "e1a237c90d68b1604ce34c5d8a5e68cbedc58eff3a1d48cd7c231e0d66258081",
+      "modified_time": "2026-10-08T08:23:02.043Z",
+      "url": "https://drive.google.com/file/d/1N2UokZ7RZDzQrRYBXGZTLj5tX3xC1b9i62foCCNXVGM/view",
+      "synced_at": "2026-10-08T12:38:35.002692+00:00"
     },
     {
       "order": 3,
       "name": "operational_plan",
       "drive_id": "11qEHyAk8olGoxgKXzt9TMp6AiGKxg8V_8xuef9k_zAQ",
-      "local": "docs/source-of-truth/03-plan/"
+      "local": "docs/source-of-truth/03-operational-plan.txt",
+      "sha256": "a8d52d087a7214d0db07ae8c22d201c04ccfc82c87abe251ac7428889c502e32",
+      "modified_time": "2026-10-08T08:32:22.900Z",
+      "url": "https://drive.google.com/file/d/11qEHyAk8olGoxgKXzt9TMp6AiGKxg8V_8xuef9k_zAQ/view",
+      "synced_at": "2026-10-08T12:38:35.002907+00:00",
+      "artifact_sha256": {
+        "docs/source-of-truth/03-plan/milestones.csv": "13b26dbd7d8af6acf1c94e4e7c9739898a164dbaaf92e197ecd41d3aff9e350d",
+        "docs/source-of-truth/03-plan/epics.csv": "000bca5c01d115d9cd6f67ab8452bc3c934fb687fb861cf0b71ee20643bd781c",
+        "docs/source-of-truth/03-plan/tasks.csv": "70f4f744f63ac41a0a2f881480bf107384104fe4fb512d3601c8a10abb3f2c21"
+      }
     },
     {
       "order": 5,
       "name": "architecture_stack",
       "drive_id": "1CPNBXIvAKoTXic5AdSY-qS4917wwHaUz_UC61pigvbk",
-      "local": "docs/source-of-truth/05-architecture-stack.md"
+      "local": "docs/source-of-truth/05-architecture-stack.md",
+      "sha256": "fcb6541a22eb98b5b55e2f18e546330601b560d1c47e0a10f7d210003e259be9",
+      "modified_time": "2026-10-08T08:27:05.892Z",
+      "url": "https://drive.google.com/file/d/1CPNBXIvAKoTXic5AdSY-qS4917wwHaUz_UC61pigvbk/view",
+      "synced_at": "2026-10-08T12:38:35.003109+00:00"
     }
   ]
 }

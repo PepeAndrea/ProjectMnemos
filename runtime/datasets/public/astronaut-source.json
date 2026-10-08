@@ -1,0 +1,8 @@
+{
+  "url": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.24.0/skimage/data/astronaut.png",
+  "sha256": "88431cd9653ccd539741b555fb0a46b61558b301d4110412b5bc28b5e3ea6cb5",
+  "bytes": 791555,
+  "license": "public domain, per official scikit-image documentation",
+  "license_source": "https://scikit-image.org/docs/stable/api/skimage.data.html#skimage.data.astronaut",
+  "scope": "face detection fixture only, no enrollment or biometric recognition"
+}

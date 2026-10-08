@@ -1,0 +1,189 @@
+{
+  "T001": {
+    "status": "Done",
+    "evidence": [
+      "docs/verification/foundation.md",
+      "tests/test_foundation.py",
+      "docs/contracts.md"
+    ],
+    "verified_on": "2026-10-08"
+  },
+  "T002": {
+    "status": "Done",
+    "evidence": [
+      "docs/verification/foundation.md",
+      "tests/test_foundation.py",
+      "docs/contracts.md"
+    ],
+    "verified_on": "2026-10-08"
+  },
+  "T003": {
+    "status": "Done",
+    "evidence": [
+      "docs/verification/foundation.md",
+      "tests/test_foundation.py",
+      "docs/contracts.md"
+    ],
+    "verified_on": "2026-10-08"
+  },
+  "T004": {
+    "status": "Done",
+    "evidence": [
+      "docs/verification/foundation.md",
+      "tests/test_foundation.py",
+      "docs/contracts.md"
+    ],
+    "verified_on": "2026-10-08"
+  },
+  "T005": {
+    "status": "Done",
+    "evidence": [
+      "docs/verification/METRICS.md",
+      "tests/test_replay.py",
+      "docs/verification/foundation.md"
+    ],
+    "verified_on": "2026-10-08"
+  },
+  "T006": {
+    "status": "Done",
+    "verified_on": "2026-10-08",
+    "evidence": [
+      "tests/test_replay.py",
+      "tests/test_media.py",
+      "tests/test_vision.py",
+      "apps/core/mnemos/perception_replay.py",
+      "docs/verification/foundation.md"
+    ],
+    "note": "Actual ONNX + tracking replay over public-domain positive fixture/black negatives and synchronized PCM; harness does not claim representative accuracy."
+  },
+  "T017": {
+    "status": "Done",
+    "note": "Manual and server-owned voice-reviewed object/person logical registry CRUD/enrollment with separate owner-attested subject consent, expiry, policy/audit, rollback and concurrent-stop verification complete. 113 tests, actual Whisper/HTTP/PostgreSQL and isolated browser flows pass. ADR-028 corrects downstream sample/quality/matching allocation; those requirements remain T018/T020/T027 and milestone exits. ADR-034 delivers temporary automatic/audio and panel display names; persistent automatic enrollment/identity remains open in docs/plan/automatic-person-approval.md.",
+    "evidence": [
+      "docs/verification/voice-enrollment.md",
+      "docs/verification/person-enrollment.md",
+      "docs/adr/ADR-024-consent-bound-local-biometric-vault.md",
+      "tests/test_biometrics.py",
+      "tests/test_api.py",
+      "docs/verification/track-binding.md",
+      "docs/verification/object-references.md",
+      "docs/verification/voice-person-enrollment.md",
+      "tests/test_voice_person_enrollment.py",
+      "docs/adr/ADR-027-reviewed-voice-person-registration.md",
+      "docs/verification/registry-acceptance.md",
+      "docs/adr/ADR-028-registry-task-dependency-audit.md"
+    ],
+    "verified_on": "2026-10-08"
+  },
+  "T046": {
+    "status": "Done",
+    "verified_on": "2026-10-08",
+    "evidence": [
+      "tests/test_scheduler.py",
+      "tests/test_api.py",
+      "docs/verification/temporal-reminders.md",
+      "docs/adr/ADR-020-durable-temporal-reminders.md"
+    ],
+    "note": "Time-only durable scheduler + atomic local notification/audit, restart, failure rollback and PostgreSQL concurrency verified. Context triggers and interrupt policy remain separate."
+  },
+  "T088": {
+    "status": "Done",
+    "verified_on": "2026-10-08",
+    "evidence": [
+      "pyproject.toml",
+      "uv.lock",
+      "apps/web/pnpm-lock.yaml",
+      "scripts/check",
+      "docs/runbooks/development.md",
+      "docs/verification/foundation.md"
+    ]
+  },
+  "T089": {
+    "status": "Done",
+    "verified_on": "2026-10-08",
+    "evidence": [
+      "INSTALLATION_REGISTRY.md",
+      "DATA_LAYOUT.md",
+      "tests/test_foundation.py",
+      "docs/verification/foundation.md"
+    ]
+  },
+  "T090": {
+    "status": "In Progress",
+    "note": "Native Docs/Sheets read/write transport, three-way source+CSV conflict preflight, rollback and verified readback implemented and fake-transport tested; live OAuth roundtrip and explicit authorized push pending."
+  },
+  "T007": {
+    "status": "In Progress",
+    "note": "Native/file video source, resolution/FPS and shared clock implemented and replay-tested; explicit live webcam verification pending. ADR-033 adds consent-bound automatic discovery (indices 0-4) and dashboard manual selection of one index, with preview for identifying unnamed OpenCV devices. Full suite 154 passed/15 skipped; lint, format, mypy, docs mirror verify, replay and web build pass. Native camera benchmark and actual macOS acquisition remain unverified, so T007 stays In Progress.",
+    "evidence": [
+      "docs/verification/source-failures.md",
+      "docs/adr/ADR-032-sanitized-source-failures-and-worker-recovery.md",
+      "docs/adr/ADR-033-bounded-native-camera-discovery.md",
+      "tests/test_source_failures.py",
+      "tests/test_media.py"
+    ]
+  },
+  "T009": {
+    "status": "In Progress",
+    "note": "Real YOLOX-S ONNX provider with license/hash gate passes blank-scene smoke and M1 latency benchmark; positive/negative accuracy and integrated stream pending. Continuous bounded owner-authenticated HTTP capture + real ONNX replay preview/stop verified; physical source and representative calibration remain pending."
+  },
+  "T012": {
+    "status": "In Progress",
+    "note": "Real YuNet provider passes empty-scene smoke and M1 latency benchmark; face quality/calibration fixture and live integration pending. Continuous bounded owner-authenticated HTTP capture + real ONNX replay preview/stop verified; physical source and representative calibration remain pending. Real pinned YuNet now extracts five landmarks and passes one wholly synthetic positive portrait replay; raw points remain internal. No representative face calibration/quality gate completion claimed."
+  },
+  "T013": {
+    "status": "In Progress",
+    "note": "Native/file PCM source, common clock and chunks implemented; safe WAV replay passes, explicit live microphone verification pending. Continuous bounded owner-authenticated HTTP capture + real ONNX replay preview/stop verified; physical source and representative calibration remain pending. ADR-032 adds stage-specific sanitized source errors, first-cause retention, release-failure flags, live-worker Stop/restart guards and explicit recovery. Full suite 140 passes/no skips; real isolated HTTP, 50-fault scheduling benchmark and browser failure/restart/Stop/Disconnect pass. Actual native acquisition/root cause remains unverified. ADR-035 sets Italian defaults and sanitized speech failures; unsupported autodetected segments no longer stop capture. 168 full-suite tests pass. Original live processing error subtype was not retained; live retry remains pending.",
+    "evidence": [
+      "docs/verification/source-failures.md",
+      "docs/adr/ADR-032-sanitized-source-failures-and-worker-recovery.md",
+      "tests/test_source_failures.py",
+      "docs/verification/session-names-and-italian-audio.md",
+      "tests/test_session_names.py",
+      "tests/test_speech.py"
+    ]
+  },
+  "T093": {
+    "status": "Done",
+    "verified_on": "2026-10-08",
+    "evidence": [
+      "docs/models.json",
+      "docs/licenses",
+      "tests/test_model_inventory.py",
+      "docs/adr/ADR-018-opencv-vision-baseline.md"
+    ]
+  },
+  "T010": {
+    "status": "In Progress",
+    "note": "Bounded anonymous session IoU tracker and enter/update/exit replay verified; detector dependency/calibration and live stream integration pending. Continuous bounded owner-authenticated HTTP capture + real ONNX replay preview/stop verified; physical source and representative calibration remain pending."
+  },
+  "T014": {
+    "status": "In Progress",
+    "note": "Pinned real Silero streaming VAD through whisper.cpp bridge; bounded segmentation, pre-roll, endpoint, source-gap reset, silence/positive synthetic tests and M1 benchmark verified. Live microphone dependency T013 and broader VAD calibration remain pending. Continuous capture integration verified: prepare before source, bounded audio queue, discontinuity/reset and cleanup on stop/EOF."
+  },
+  "T015": {
+    "status": "In Progress",
+    "note": "Pinned local Whisper Tiny/Base CPU/Metal comparison, real partial/final stream timecodes/token confidence, IT/EN synthetic replay and model unload verified. Continuous core/dashboard integration, owner-only live HTTP replay and native cancellation verified; representative WER and live source remain pending; ASR output confers no owner authority. ADR-035 sets Italian defaults and sanitized speech failures; unsupported autodetected segments no longer stop capture. 168 full-suite tests pass. Original live processing error subtype was not retained; live retry remains pending.",
+    "evidence": [
+      "docs/verification/session-names-and-italian-audio.md",
+      "tests/test_session_names.py",
+      "tests/test_speech.py"
+    ]
+  },
+  "T018": {
+    "status": "In Progress",
+    "note": "T017 prerequisite verified (ADR-028). Multiple encrypted object views have bounded quality/duplicate guards (ADR-029); consent-bound face images now use separate key/table, fresh server crops, per-modality consent/name/expiry checks, revocation and cleanup retry (ADR-030). Full suite 122 passed/no skips, actual isolated HTTP/PostgreSQL two-face-view/revocation/anonymous-track flow and M1 storage benchmark pass. Isolated face dashboard save/preview/Stop/reload/Disconnect verified. Real authorized acquisition, physical quality/pose diversity and representative acceptance remain pending. ADR-031 adds bounded detail/five-point geometry diagnostics with provisional warnings, raw-point public redaction and one AI portrait real-YuNet positive replay. Full suite 127 passes/no skips; real quality/pose acceptance still pending. Browser 5185 actual-YuNet AI-fixture acquisition/geometry/preview/Stop/restart/Disconnect verified; no production biometric sample/key created.",
+    "evidence": [
+      "docs/verification/object-references.md",
+      "docs/verification/reference-quality.md",
+      "docs/adr/ADR-029-bounded-reference-quality-and-duplicate-views.md",
+      "tests/test_reference_quality.py",
+      "docs/verification/face-references.md",
+      "docs/adr/ADR-030-consent-bound-face-image-references.md",
+      "tests/test_face_references.py",
+      "docs/verification/face-quality.md",
+      "docs/adr/ADR-031-bounded-face-reference-diagnostics.md",
+      "tests/test_face_quality.py"
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+{"schema_version":1,"source":"synthetic","events":[{"at":0,"kind":"enter","label":"zaino"},{"at":1,"kind":"update","label":"zaino"},{"at":2,"kind":"exit","label":"zaino"},{"at":3,"kind":"enter","label":"zaino"}],"expected_lifecycle":["enter","update","exit","enter"],"audio":{"sample_rate":16000,"seconds":4,"frequency_hz":440},"video":{"width":64,"height":48,"fps":1,"frames":4}}
