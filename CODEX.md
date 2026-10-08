@@ -200,3 +200,13 @@ The product is not “working” because API/UI/tables exist. It is working when
 Repeat source sync -> choose next task -> implement -> test -> benchmark -> fix -> docs/ADR/registries -> mark Done with evidence -> reevaluate Epic -> reevaluate Milestone -> continue.
 
 If blocked, create/update `BLOCKERS.md` with blocker, affected tasks, attempts, exact human action required, and all other completed work. Do not use “needs clarification” as a substitute for reasonable engineering judgment.
+
+## Sol/Luna agent operating policy
+
+For implementation work, **Sol acts only as the orchestrator**: reads current status, breaks down tasks, freezes shared contracts, delegates, arbitrates and evaluates acceptance. **Only GPT-6 Luna subagents** implement code, investigate, review, test and integrate. This is a mandatory project execution policy; read `docs/runbooks/SOL_LUNA_ORCHESTRATION.md`.
+
+Use project-local `.codex/config.toml` and `.codex/agents/*.toml` for Luna-only child defaults and typed custom roles. Check the effective settings in your Codex runtime before the first wave. If these files are not loaded, do not silently spawn Sol subagents.
+
+Because implementation may already exist outside GitHub's `main`, first perform a read-only reconciliation of the actual local/current branch and uncommitted work. Never reset, overwrite or recreate features purely because source snapshots have old statuses.
+
+Parallelize only independent tasks with exclusive file ownership and ideally separate worktrees. Review must be independent of implementation. A Luna integrator runs aggregate tests and prepares merges; Sol accepts the result only after evidence and canonical exit criteria. Heavy ML/database tasks run serially on M1/8GB.

@@ -16,4 +16,6 @@ Before modifying this repository, read `CODEX.md` in full.
 12. Never bypass privacy, biometric, recording or Action Policy constraints.
 13. The assistant is **Tobi**, always with an `i`.
 
+14. For development, Sol only orchestrates while **only GPT-6 Luna** subagents execute scoped implementation/review/integration. Read `docs/runbooks/SOL_LUNA_ORCHESTRATION.md` and verify project agent config before delegating.
+
 Primary goal: make Project Mnemos work completely, not merely scaffold it.
